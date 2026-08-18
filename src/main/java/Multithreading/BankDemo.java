@@ -7,7 +7,7 @@ class Account {
         return balance;
     }
 
-    public synchronized void withdraw(int amount) {
+    public  void withdraw(int amount) {
         String threadName = Thread.currentThread().getName();
         
         System.out.println(threadName + " is trying to withdraw " + amount);
@@ -49,7 +49,7 @@ public class BankDemo {
     public static void main(String[] args) {
         Account myAccount = new Account();
 
-        BankTask task = new BankTask(myAccount, 700);
+        BankTask task = new BankTask(myAccount, 500);
 
         Thread t1 = new Thread(task, "Husband-Thread");
         Thread t2 = new Thread(task, "Wife-Thread");
