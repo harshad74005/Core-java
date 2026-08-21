@@ -34,12 +34,16 @@ class BankTask implements Runnable {
     private Account account;
     private int amountToWithdraw;
 
-    public BankTask(Account account, int amountToWithdraw) {
-        this.account = account;
+    public BankTask(Practice account2, int amountToWithdraw) {
+        this.account = account2;
         this.amountToWithdraw = amountToWithdraw;
     }
 
-    @Override
+    public BankTask(Practice account2, int amountToWithdraw2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
     public void run() {
         account.withdraw(amountToWithdraw);
     }
